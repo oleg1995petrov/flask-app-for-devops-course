@@ -1,0 +1,12 @@
+[Unit]
+Description=Gunicorn for flask app
+After=network.target
+
+[Service]
+User=[UNAME]
+Group=www-data
+WorkingDirectory=[WORKDIR]
+ExecStart=/usr//bin/gunicorn --workers 3 --bind unix:[PATH/TO/APP]flask.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
