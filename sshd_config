@@ -1,5 +1,4 @@
 Port 22
-Port 80
 Port 443
 
 HostKey /etc/ssh/ssh_host_rsa_key 
