@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 
-from services import get_animal_img, generate_message
+from services import generate_msg
 
 
 app = Flask(__name__)
@@ -11,11 +11,9 @@ def home():
     if request.method == 'GET':
         return render_template('home.html')
     elif request.method == 'POST':
-        content = request.get_json(force=True)
-        animal = content.get('animal')
-        sound = content.get('sound')
-        count = content.get('count')
-        return generate_message(animal, sound, count)
+        data = request.get_json(force=True)
+        animal, sound, count = data.get('animal'), data.get('sound'), data.get('count')
+        return generate_msg(animal, sound, count)
 
 
 if __name__ == '__main__':
