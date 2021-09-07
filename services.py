@@ -19,19 +19,40 @@ def get_animal_img(animal):
     return img
 
 
-def generate_msg(animal=None, sound=None, count=None):
-    message = ("You haven't passed all the arguments!\n"
-               "Required arguments are:\n" 
-               "-animal\n"
-               "-sound\n"
-               "-count\n")
+def generate_error_msg():
+    msg = ("You haven't passed all the arguments!\n"
+           "The required arguments are:\n" 
+           "- animal\n"
+           "- sound\n"
+           "- count\n")
+    return msg
+
+
+def generate_success_msg(animal=None, sound=None, count=None):
+    if not all((animal, sound, count)):
+        return generate_error_msg()
+
+    img = get_animal_img(animal)
+    msg = f'{animal.capitalize()} {img}  says {sound}.\n' if img else (
+          f'{animal} says {sound}.\n')
     
-    if all((animal, sound, count)):
-        img = get_animal_img(animal)
-        message = f'{animal} {img}  says {sound}\n' if img else message = f'{animal} says {sound}\n'
-        
-        if isinstance(count, int): 
-            message *= count
-            
-        message += 'Made with ❤️  by Ventz.\n'
-    return message 
+    if isinstance(count, int): 
+        msg *= count
+    elif isinstance(count, str):
+        try:
+            msg *= int(count)
+        except ValueError:
+            pass                 
+
+    msg += 'Made with ❤️  by Ventz.\n'
+    return msg 
+
+
+def generate_msg(data=None):    
+    if not isinstance(data, dict):
+        return generate_error_msg()
+
+    animal = data.get('animal')
+    sound = data.get('sound')
+    count = data.get('count')
+    return generate_success_msg(animal, sound, count)
