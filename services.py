@@ -19,7 +19,7 @@ def get_animal_img(animal):
     return img
 
 
-def generate_message(animal=None, sound=None, count=None):
+def generate_msg(animal=None, sound=None, count=None):
     message = ("You haven't passed all the arguments!\n"
                "Required arguments are:\n" 
                "-animal\n"
