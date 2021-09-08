@@ -12,8 +12,12 @@ def home():
         return render_template('home.html')
     elif request.method == 'POST':
         data = request.get_json(force=True)
-        animal, sound, count = data.get('animal'), data.get('sound'), data.get('count')
-        return generate_msg(animal, sound, count)
+        return generate_msg(data)
+
+
+@app.errorhandler(404)
+def error_404(e):
+    return render_template('404.html'), 404
 
 
 if __name__ == '__main__':
