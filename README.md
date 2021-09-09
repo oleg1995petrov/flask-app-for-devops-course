@@ -5,9 +5,15 @@
 
     Inside virtual machine install `openssl-server` package:
 
-```bash
-apt install openssl-server
-```  
+```python
+# save this as app.py
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello, World!"```  
 
 2. Set up `sshd_config` on remote machine by editing `/etc/ssh/sshd_config` file. Uncomment the next lines with the next values:
   * `Port 22`
