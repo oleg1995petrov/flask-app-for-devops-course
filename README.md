@@ -6,7 +6,7 @@
     Inside virtual machine install `openssl-server` package:
 
 ```bash
-$ apt install openssl-server
+apt install openssl-server
 ```  
 
 2. Set up `sshd_config` on remote machine by editing `/etc/ssh/sshd_config` file. Uncomment the next lines with the next values:
@@ -19,17 +19,17 @@ $ apt install openssl-server
     After that restart ssh service:
 
 ```bash 
-$ sudo service ssh restart
+sudo service ssh restart
 ```
 3. Copy from local machine your pub rsa key to remote: 
 
 ```bash
-$ ssh-copy-id -i [your pub key | usually locates at /home/[your username\]/.id_rsa.pub or other name which you set ] [username on remote machine]@[hostname or ip address]
+ssh-copy-id -i [your pub key | usually locates at /home/[your username\]/.id_rsa.pub or other name which you set ] [username on remote machine]@[hostname or ip address]
 ```
 
     If you have no rsa-keys yet, first install a cuple:
 ```bash
-$ ssh-keygen -t rsa -f /home/[username]/.ssh/id_rsa[here may be a prefix] 
+ssh-keygen -t rsa -f /home/[username]/.ssh/id_rsa[here may be a prefix] 
 ```
     And now copy pub key as was written above.
 
@@ -43,18 +43,18 @@ $ ssh-keygen -t rsa -f /home/[username]/.ssh/id_rsa[here may be a prefix]
 5. Create an encrypted file with your VM's account password:
 
 ```bash
-$ ansible-vault create [password_file_name.yml | for example: passwd.yml]
+ansible-vault create [password_file_name.yml | for example: passwd.yml]
 ```
 Enter a password for that file. Inside it put `ansible_become_pass` variable with your VM account password:
 
 ```bash
-$ ansible_become_pass: [your VM account password]
+ansible_become_pass: [your VM account password]
 ```
 
 6. Now you are ready to start `ansible-playbook`:
 
 ```bash
-$ ansible-playbook -i inventory -e @passwd.yml --ask-vault-pas deploy.yml
+ansible-playbook -i inventory -e @passwd.yml --ask-vault-pas deploy.yml
 ```
 
     Enter the password of your encrypted passwd.yml file and wait while Ansible will execute playbook.
