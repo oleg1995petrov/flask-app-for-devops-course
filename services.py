@@ -21,7 +21,7 @@ def get_animal_img(animal):
 
 def generate_error_msg():
     msg = ("You haven't passed all the required arguments!\n"
-           "The required arguments are:\n" 
+           "The following arguments are required:\n" 
            "- animal\n"
            "- sound\n"
            "- count\n")
