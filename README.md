@@ -10,11 +10,11 @@ $ apt install openssl-server
 ```  
 
 2. Set up `sshd_config` on remote machine by editing `/etc/ssh/sshd_config` file. Uncomment the next lines with the next values:
-  * `Port 22`
-  * `HostKey /etc/ssh/ssh_host_rsa_key`
-  * `AuthorizedKeysFile .ssh/authorized_keys` 
-  * `PubkeyAuthentication yes`
-  * `PasswordAuthentication yes`
+    * `Port 22`
+    * `HostKey /etc/ssh/ssh_host_rsa_key`
+    * `AuthorizedKeysFile .ssh/authorized_keys` 
+    * `PubkeyAuthentication yes`
+    * `PasswordAuthentication yes`
 
     After that restart ssh service:
 
