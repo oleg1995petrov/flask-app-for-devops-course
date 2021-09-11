@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup as bs
 
 
 def get_animal_img(animal):
-    url = f'https://emojipedia.org/{animal}'
+    url = f'https://emojipedia.org/{animal.lower()}'
     response = requests.get(url)
     
     if response.status_code != 200: return
@@ -33,8 +33,8 @@ def generate_success_msg(animal=None, sound=None, count=None):
         return generate_error_msg()
 
     img = get_animal_img(animal)
-    msg = f'{animal.capitalize()} {img}  says {sound}.\n' if img else (
-          f'{animal} says {sound}.\n')
+    msg = f'{animal.capitalize()} {img}  says {sound.lower()}.\n' if img else (
+          f'{animal.capitalize()} says {sound.lower()}.\n')
     
     if isinstance(count, int): 
         msg *= count
