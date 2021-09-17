@@ -1,14 +1,14 @@
 phrases = [
-  { text: 'отправить другу смешную гифку', image: 'https://code.s3.yandex.net/web-code/procrastinate/1.gif' },
-  { text: 'посмотреть скидки на авиабилеты', image: 'https://code.s3.yandex.net/web-code/procrastinate/2.png' },
-  { text: 'разобраться, о чём поют рэперы', image: 'https://code.s3.yandex.net/web-code/procrastinate/3.png' },
-  { text: 'Юрий Дудь', image: 'https://code.s3.yandex.net/web-code/procrastinate/4.png' },
-  { text: 'расставить книги на полке по цвету', image: 'https://code.s3.yandex.net/web-code/procrastinate/5.png' },
-  { text: 'читать про зарплаты в Сан-Франциско', image: 'https://code.s3.yandex.net/web-code/procrastinate/6.png' },
-  { text: 'прочитать новости и ужаснуться в комментариях', image: 'https://code.s3.yandex.net/web-code/procrastinate/7.png' },
-  { text: 'попасть в поток грустных песен и вспомнить все ошибки молодости', image: 'https://code.s3.yandex.net/web-code/procrastinate/8.png' },
-  { text: 'посмотреть трейлер сериала и заодно первый сезон', image: 'https://code.s3.yandex.net/web-code/procrastinate/9.png' },
-  { text: 'проверить непрочитанное в Telegram-каналах', image: 'https://code.s3.yandex.net/web-code/procrastinate/10.png' }
+  { text: 'отправить другу смешную гифку', image: '../static/images/gif.gif' },
+  { text: 'посмотреть скидки на авиабилеты', image: '../static/images/tickets.png' },
+  { text: 'разобраться, о чём поют рэперы', image: '../static/images/rapers.png' },
+  { text: 'Юрий Дудь', image: '../static/images/dud.png' },
+  { text: 'расставить книги на полке по цвету', image: '../static/images/books.png' },
+  { text: 'читать про зарплаты в Сан-Франциско', image: '../static/images/SF.png' },
+  { text: 'прочитать новости и ужаснуться в комментариях', image: '../static/images/news.png' },
+  { text: 'попасть в поток грустных песен и вспомнить все ошибки молодости', image: '../static/images/songs.png' },
+  { text: 'посмотреть трейлер сериала и заодно первый сезон', image: '../static/images/TV.png' },
+  { text: 'проверить непрочитанное в Telegram-каналах', image: '../static/images/mail.png' }
 ];
 
 
