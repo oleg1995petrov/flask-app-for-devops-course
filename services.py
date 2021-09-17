@@ -33,7 +33,7 @@ def generate_success_msg(animal=None, sound=None, count=None):
         return generate_error_msg()
 
     img = get_animal_img(animal)
-    msg = f'{animal.capitalize()} {img}  says {sound.lower()}.\n' if img else (
+    msg = f'{img}  says {sound.lower()}.\n' if img else (
           f'{animal.capitalize()} says {sound.lower()}.\n')
     
     if isinstance(count, int): 
