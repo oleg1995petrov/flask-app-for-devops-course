@@ -1,6 +1,6 @@
 # Overview
 
-This repo contain a Flask app as a part of [that](https://github.com/oleg1995petrov/devops-andersen-training/tree/master/HW%202) task.  
+This repo contains a Flask app as a part of [that](https://github.com/oleg1995petrov/devops-andersen-training/tree/master/HW%202) task.  
 
 The app should receive `json` object and return strings in the following manner:
 
