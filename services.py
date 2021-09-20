@@ -1,9 +1,10 @@
 import requests
 
+from emoji import emojize as emj
 from bs4 import BeautifulSoup as bs
 
 
-def get_animal_img(animal):
+def get_animal_img_bs4(animal):
     url = f'https://emojipedia.org/{animal.lower()}'
     response = requests.get(url)
     
@@ -16,6 +17,12 @@ def get_animal_img(animal):
         img = soup.find('span').text
     except AttributeError:
         return 
+    return img
+
+
+def get_animal_img(animal):
+    img = emj(f':{animal}:')
+    img = img[1:-1].capitalize() if img.startswith(':') else img
     return img
 
 
@@ -33,8 +40,7 @@ def generate_success_msg(animal=None, sound=None, count=None):
         return generate_error_msg()
 
     img = get_animal_img(animal)
-    msg = f'{img}  says {sound.lower()}.\n' if img else (
-          f'{animal.capitalize()} says {sound.lower()}.\n')
+    msg = f'{img}  says {sound.lower()}.\n'
     
     if isinstance(count, int): 
         msg *= count
