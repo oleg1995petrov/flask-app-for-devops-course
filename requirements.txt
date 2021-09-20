@@ -1,4 +1,6 @@
-flask
 bs4
-gunicorn
 cryptography
+flask
+emoji
+gunicorn
+cryptography>=1.2.3
