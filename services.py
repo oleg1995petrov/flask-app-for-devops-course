@@ -50,7 +50,7 @@ def generate_success_msg(animal=None, sound=None, count=None):
         except ValueError:
             pass                 
 
-    msg += 'Made with ❤️  by Ventz.\n'
+    msg += 'Made with ❤️ by Ventz.\n'
     return msg 
 
 
