@@ -1,7 +1,7 @@
 import requests
 
-from emoji import emojize as emj
 from bs4 import BeautifulSoup as bs
+from emoji import emojize as emj
 
 
 def get_animal_img_bs4(animal):
