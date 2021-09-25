@@ -26,4 +26,4 @@ elephant says whoooaaa
 Made with     by %my_name
 
 ```
-![logo](https://github.com/oleg1995petrov/fkask-app-for-devops-course/tree/master/logo.png)
+![logo](https://github.com/oleg1995petrov/flask-app-for-devops-course/tree/master/logo.png)
