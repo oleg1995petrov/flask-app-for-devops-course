@@ -3,8 +3,8 @@
 # from bs4 import BeautifulSoup as bs
 from emoji import emojize as emj
 
-# Another way by "bs4" 
-# def get_animal_img_bs4(animal):
+# The other way to retrieve an emoji 
+# def get_animal_emoji(animal):
 #     url = f'https://emojipedia.org/{animal.lower()}'
     
 #     response = requests.get(url)
@@ -21,8 +21,7 @@ from emoji import emojize as emj
 #     return img
 
 
-# KISS
-def get_animal_img(animal):
+def get_animal_emoji(animal):
     img = emj(f':{animal}:')
     img = img[1:-1].capitalize() if img.startswith(':') else img
     return img
@@ -41,7 +40,7 @@ def generate_success_msg(animal=None, sound=None, count=None):
     if not all((animal, sound, count)):
         return generate_error_msg()
 
-    img = get_animal_img(animal)
+    img = get_animal_emoji(animal)
     msg = f'{img}  says {sound.lower()}.\n'
     
     if isinstance(count, int): 
