@@ -1,25 +1,27 @@
-import requests
+# import requests
 
-from bs4 import BeautifulSoup as bs
+# from bs4 import BeautifulSoup as bs
 from emoji import emojize as emj
 
-
-def get_animal_img_bs4(animal):
-    url = f'https://emojipedia.org/{animal.lower()}'
-    response = requests.get(url)
+# Another way by "bs4" 
+# def get_animal_img_bs4(animal):
+#     url = f'https://emojipedia.org/{animal.lower()}'
     
-    if response.status_code != 200: return
+#     response = requests.get(url)
+#     if response.status_code != 200: 
+#         return
     
-    soup = bs(response.content, 'html.parser')
-    try:
-        content = soup.find('div', class_='content')
-        soup = bs(str(content), 'html.parser')
-        img = soup.find('span').text
-    except AttributeError:
-        return 
-    return img
+#     soup = bs(response.content, 'html.parser')
+#     try:
+#         content = soup.find('div', class_='content')
+#         soup = bs(str(content), 'html.parser')
+#         img = soup.find('span').text
+#     except AttributeError:
+#         return 
+#     return img
 
 
+# KISS
 def get_animal_img(animal):
     img = emj(f':{animal}:')
     img = img[1:-1].capitalize() if img.startswith(':') else img
