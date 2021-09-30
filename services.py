@@ -22,7 +22,7 @@ from emoji import emojize as emj
 
 
 def get_animal_emoji(animal):
-    img = emj(f':{animal}:')
+    img = emj(f':{animal.lower()}:')
     img = img[1:-1].capitalize() if img.startswith(':') else img
     return img
 
