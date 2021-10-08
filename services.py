@@ -1,6 +1,7 @@
 # import requests
 
 # from bs4 import BeautifulSoup as bs
+from datetime import date
 from emoji import emojize as emj
 
 # The other way to retrieve an emoji 
@@ -23,7 +24,7 @@ from emoji import emojize as emj
 
 def get_animal_emoji(animal):
     img = emj(f':{animal.lower()}:')
-    img = img[1:-1].capitalize() if img.startswith(':') else img
+    img = img[1:-1].capitalize() if len(img) != 1 else img
     return img
 
 
@@ -50,9 +51,12 @@ def generate_success_msg(animal=None, sound=None, count=None):
             msg *= int(count)
         except ValueError:
             pass                 
-
-    msg += 'Made with ❤️ by Ventz.\n'
-    return msg 
+    
+    love = emj(':red_heart:')
+    copyright = emj(':copyright:')
+    curr_year = date.today().year
+    msg += f"\n{copyright} {curr_year}. Made with {love}  by Ventz.\n"
+    return msg
 
 
 def generate_msg(data=None):    
