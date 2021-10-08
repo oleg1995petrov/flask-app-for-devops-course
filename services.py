@@ -21,6 +21,8 @@ from emoji import emojize as emj
 #         return 
 #     return img
 
+GREEN = '\033[32m'
+
 
 def get_animal_emoji(animal):
     img = emj(f':{animal.lower()}:')
@@ -55,7 +57,7 @@ def generate_success_msg(animal=None, sound=None, count=None):
     love = emj(':red_heart:')
     copyright = emj(':copyright:')
     curr_year = date.today().year
-    msg += f"\n{copyright} {curr_year}. Made with {love}  by Ventz.\n"
+    msg += f"\n{GREEN}{copyright} {curr_year}. Made with {love}  by Ventz.\n"
     return msg
 
 
