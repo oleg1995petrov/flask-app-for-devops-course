@@ -14,10 +14,10 @@ def home():
         try:
             data = request.get_json(force=True)
         except BadRequest:
-            return ('Make sure you have passed the right data. ' +
+            return ('Make sure you have passed the right data. '
                     'Here is an example:\n'
-                    f"{RED}    curl -X POST -d '" +
-                    '{"animal": "frog", "sound": "kwa", "count": 5} ' +
+                    f"{RED}    curl -X POST -d '"
+                    '{"animal": "frog", "sound": "kwa", "count": 5} '
                     'localhost:8080\n')
         return generate_msg(data)
     else:
