@@ -3,8 +3,8 @@ from flask import Flask, request, render_template
 from services import generate_msg
 from werkzeug.exceptions import BadRequest
 
-RED = '\033[32m'
 
+RED = '\033[32m'
 app = Flask(__name__)
 
 
