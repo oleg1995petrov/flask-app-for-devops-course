@@ -1,25 +1,6 @@
-# import requests
-
-# from bs4 import BeautifulSoup as bs
 from datetime import date
 from emoji import emojize as emj
 
-# The other way to retrieve an emoji 
-# def get_animal_emoji(animal):
-#     url = f'https://emojipedia.org/{animal.lower()}'
-    
-#     response = requests.get(url)
-#     if response.status_code != 200: 
-#         return
-    
-#     soup = bs(response.content, 'html.parser')
-#     try:
-#         content = soup.find('div', class_='content')
-#         soup = bs(str(content), 'html.parser')
-#         img = soup.find('span').text
-#     except AttributeError:
-#         return 
-#     return img
 
 GREEN = '\033[32m'
 
