@@ -16,7 +16,7 @@ def home():
         except BadRequest:
             return ('Make sure you have passed the right data. '
                     'Here is an example:\n'
-                    f"{RED}    curl -X POST -d '"
+                    f"    {RED}curl -X POST -d '"
                     '{"animal": "frog", "sound": "kwa", "count": 5} '
                     'localhost:8080\n')
         return generate_msg(data)
@@ -30,4 +30,4 @@ def error_404(e):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0")
